@@ -1,0 +1,229 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+# Sample workflow for building and deploying a Jekyll site to GitHub Pages
+name: Deploy Jekyll site to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@ee2113536afb7f793eed4ce60e8d3b26db912da4 # v1.127.0
+        with:
+          ruby-version: '3.0' # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 0 # Increment this number if you need to re-download cached gems
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v3
+      - name: Build with Jekyll
+        # Outputs to the './_site' directory by default
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+      - name: Upload artifact
+        # Automatically uploads an artifact from the './_site' directory by default
+        uses: actions/upload-pages-artifact@v1
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+a/.-@@--diff --@@- b/.[PATCH] 
++ BEGIN:
++ GLOW4:
++ </git checkout origin/main <file name>
++Run'' 'Runs::/Action::/:Build::/scripts::/Run-on :Runs :
++Runs :gh/pages :
++pages :edit "
++$ intuit install 
++Perls" --add-label "production"
++env:
++PR_URL: ${{github.event.pull_request.html_url}}
++GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
++run: gh pr edit "$PR_URL" --add-label "production"
++env:
++PR_URL: ${{github.event.pull_request.html_url}}
++GITHUB_TOKEN: ${{ ((c)(r)).[12753750.[00]m]'_BITORE_34173.1337) ')]}}}'"'' :
++ </git checkout zookeeper.yml/pA11y/Main.yml <file name>
+[jobs/zookeeper/templates/zoo.cfg.erb](https://github.com/cppforlife/zookeeper-release/pull/11/files#diff-1a7630fcbdd2d427eaafd971ee4f9bada4bfb07abb662c75c93199cdbef627c1)
+Marking files as viewed can help keep track of your progress, but will not affect your submitted reviewViewed
+<% peers = link('peers') %>	<% peers = link('peers') %>
+<% peers.instances.each do |instance| %>	<% peers.instances.each do |instance| %>
+server.<%= instance.index+1 %>=<%= (instance.id == spec.id) ? "0.0.0.0" : instance.address %>:<%= peers.p('quorum_port') %>:<%= peers.p('leader_election_port') %>	server.<%= instance.index+1 %>=<%= (instance.id == spec.id) ? "0.0.0.0" : instance.address %>:<%= peers.p('quorum_port') %>:<%= peers.p('leader_election_port') %>
+<% end %>	<% end %>
+autopurge.purgeInterval=<%= p('autopurge_purge_interval') %>	autopurge.purgeInterval=<%= p('autopurge_purge_interval') %>
+autopurge.snapRetainCount=<%= p('autopurge_snap_retain_count') %>	autopurge.snapRetainCount=<%= p('autopurge_snap_retain_count') %>
+clientPort=<%= peers.p('client_port') %>	clientPort=<%= peers.p('client_port') %>
+clientPortAddress=<%= p('listen_address') %>	clientPortAddress=<%= p('listen_address') %>
+cnxTimeout=<%= p('cnx_timeout') %>	cnxTimeout=<%= p('cnx_timeout') %>
+dataDir=/var/vcap/store/zookeeper	dataDir=/var/vcap/store/zookeeper
+dataLogDir=/var/vcap/sys/log/zookeeper	dataLogDir=<%= p('trans_log_dir') %>
+electionAlg=<%= p('election_algorim') %>	electionAlg=<%= p('election_algorim') %>
+fsync.warningthresholdms=<%= p('warning_threshold_ms') %>	fsync.warningthresholdms=<%= p('warning_threshold_ms') %>
+globalOutstandingLimit=<%= p('global_outstanding_limit') %>	globalOutstandingLimit=<%= p('global_outstanding_limit') %>
+initLimit=<%= p('init_limit') %>	initLimit=<%= p('init_limit') %>
+leaderServes=<%= p('leader_serves') %>	leaderServes=<%= p('leader_serves') %>
+maxClientCnxns=<%= p('max_client_connections') %>	maxClientCnxns=<%= p('max_client_connections') %>
+maxSessionTimeout=<%= p('max_session_timeout') %>	maxSessionTimeout=<%= p('max_session_timeout') %>
+minSessionTimeout=<%= p('min_session_timeout') %>	minSessionTimeout=<%= p('min_session_timeout') %>
+preAllocSize=<%= p('pre_allocation_size') %>	preAllocSize=<%= p('pre_allocation_size') %>
+snapCount=<%= p('snap_count') %>	snapCount=<%= p('snap_count') %>
+syncEnabled=<%= p('sync_enabled') %>	syncEnabled=<%= p('sync_enabled') %>
+syncLimit=<%= p('sync_limit') %>	syncLimit=<%= p('sync_limit') %>
+tickTime=<%= p('tick_time') %>	tickTime=<%= p('tick_time') %>
+forceSync=<%= p('force_sync') %>index faefd23..c0468b4 100644
+--- a/.github/workflows/Automate.yml
++++ b/.github/workflows/Automate.yml
+@@ -1,23 +1,10 @@
+-Skip to content
++#Jump-or-#?Skip-#To content :
+ Search or jump to…
+ Pull requests
+-Issues
+-Codespaces
+-Marketplace
+-Explore
+- 
+-@mowjoejoejoejoe 
+-github
+-/
+-docs
+-Public
+-Fork your own copy of github/docs
+-Code
+-Issues
+-101
+-Pull requests
+-49
+-Discussions
++Issues.tmp :parameters.md :
++\@@ -0,0 +1,2 @@
++# WORKSFLOW
++ AUTOMATE AUTOMATES BEGIN GLOW4 AUTOMATES#Test :tests :tests :Run'@ci: 
+ Actions
+ Projects
+ 4
+diff --git a/CONTRIBUTINGME.md/contributingme.md b/CONTRIBUTINGME.md/contributingme.md
+deleted file mode 100644
+index a8f5df5..0000000
+--- a/CONTRIBUTINGME.md/contributingme.md
++++ /dev/null
+@@ -1,5 +0,0 @@
+-BITCORE/bitore.sig :
+-E=Request :
+-Pushs :in-to :tavis'@Test.yml'@tests :
+-#tests'@travis'@BITORE'@bitore.sig:
+-ci:
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000..21d2f7c
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,37 @@
++ '-'' '#Bitore.sigs/test'@Request.md'@meh.i :
++ name :mod.yml L: WORKSFLOW:
++'-'' 'AUTOMATE AUTOMATES BEGIN GLOW4 AUTOMATES#Test :tests :tests :Run'@ci:
++GLOW4:'
++BEGIN'
++STARt'
++RUN'
++FROM'
++name :bitore.sig
++Title'' ':'Nan.yml'' :
++-on :ON :
++  starts-on :GLOW7 :
++  workflows_call-on :dispatch ::':repositories/WORKFLOW.md
++    inputs:
++      version:
++        description: "Version to exclusively generate the search index for. E.g. 'dotcom', 'ghes-3.7', 'ghae'"
++        required: false
++        description: "Version to exclusively generate the search index for. E.g. 'dotcom', 'ghcr'@v'"-3.7.9.11.10'"'' :
++        , 'ghrc/cadd.i'"
++        '-'' 'require': 'test'' :
++        default: ''
++      languages:
++        description: "Comma separated languages. E.g. 'en,ja, es' (defaults to all)"
++        required: false
++        default: ''
++  schedule:
++    - cron: '20 */24 * * *' # Run every 24 hours at 20 minutes past the hour
++  workflow_run:
++    workflows: ['Azure Production - Build and Deploy']
++    types:
++      - completed
++permissions:
++  contents: read
++# This allows a subsequently queued workflow run to cancel previous runs
++concurrency:
++  group: '${{ github.workflow }} @ ${{ github.head_ref }} ${{ github.event_name }}'
++  cancel-in-progress: true
+diff --git a/WORKSFLOW.md b/WORKSFLOW.md
+new file mode 100644
+index 0000000..7a37d1f
+--- /dev/null
++++ b/WORKSFLOW.md
+@@ -0,0 +1,31 @@
++BITCORE/bitore.sig :
++E=Request :Pull Request.md :
++Title'' ':'Nan.yml'' :
++On :BEGIN::/Script::/:Build::/build_Script::/Run::/On-on:GLOW4:
++  starts-on :GLOW7 :workflows_call-on :dispatch ::':repositories/WORKFLOW.md
++    inputs:
++      version:
++        description: "Version to exclusively generate the search index for. E.g. 'dotcom', 'ghes-3.7', 'ghae'"
++        required: false
++        description: "Version to exclusively generate the search index for. E.g. 'dotcom', 'ghcr'@v'"-3.7.9.11.10'"'' :
++        , 'ghrc/cadd.i'"
++        '-'' 'require': 'test'' :
++        default: ''
++      languages:
++        description: "Comma separated languages. E.g. 'en,ja, es' (defaults to all)"
++        required: false
++        default: ''
++  schedule:
++    - cron: '20 */24 * * *' # Run every 24 hours at 20 minutes past the hour
++  workflow_run:
++    workflows: ['Azure Production - Build and Deploy']
++    types:
++      - completed
++permissions:
++  contents: read
++# This allows a subsequently queued workflow run to cancel previous runs
++concurrency:
++  group: '${{ github.workflow }} @ ${{ github.head_ref }} ${{ github.event_name }}'
++  cancel-in-progress: true
++  :Build::
++  Publish :
